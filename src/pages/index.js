@@ -1,19 +1,13 @@
+import FrontPage from "../sections/frontPage";
+import Header from "../sections/header/header";
+import BlogPosts from "../sections/blogPosts";
 import axios from "axios";
-import Link from "next/link";
 
 export default function Home({ posts }) {
   return (
     <div>
-      {posts &&
-        posts.map((post) => (
-          <Link href={`/${post.Slug}`} key={post.id}>
-            <a>
-              <h2>{post.Title}</h2>
-              <p>{post.Content}</p>
-              <div style={{ height: "2rem" }}></div>
-            </a>
-          </Link>
-        ))}
+      <FrontPage />
+      <BlogPosts posts={posts} />
     </div>
   );
 }
