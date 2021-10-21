@@ -3,8 +3,8 @@ import SinglePost from "../components/singlePost";
 
 const BlogPosts = ({ posts }) => {
   return (
-    <section className="bg-gray-50">
-      <div className="container  flex-wrap lg:flex-nowrap gap-5 mx-auto p-10 flex justify-between items-center">
+    <section className="bg-gray-50 px-5">
+      <div className="container flex-wrap lg:flex-nowrap gap-5 mx-auto flex justify-between items-center">
         {posts &&
           posts.map((post) => (
             <SinglePost

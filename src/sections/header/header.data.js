@@ -1,12 +1,15 @@
 export default [
   {
-    path: "acasa",
-
+    path: "/",
     label: "Acasa",
   },
   {
     path: "rezultate",
     label: "Rezultate",
+  },
+  {
+    path: "echipa",
+    label: "Echipa",
   },
 
   {

@@ -1,15 +1,31 @@
 import axios from "axios";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import Header from "../sections/header/header";
 
-const Post = ({ post }) => {
+const Post = ({ post, result }) => {
   return (
     <div>
-      <Link href="/">Go Home</Link>
-      <br />
-      <br />
-      <br />
-      {post.Title}
+      <Header result={result} />
+
+      <div className="flex flex-col justify-center items-center">
+        <Image
+          src={post.Cover[0].url}
+          objectFit="cover"
+          objectPosition="top"
+          width="1600"
+          height="400"
+          className="w-full filter grayscale"
+        />
+        <h5 className="p-10 -mt-16 text-5xl font-extrabold text-black text-center filter drop-shadow-lg bg-white">
+          {" "}
+          {post.Title}
+        </h5>
+      </div>
+      <div className="container mx-auto py-10 flex justify-center items-center">
+        <p className="px-5 text-xl font-normal max-w-3xl"> {post.Content}</p>
+      </div>
     </div>
   );
 };
@@ -43,7 +59,11 @@ export async function getStaticProps({ params }) {
     );
     const post = res.data[0];
 
-    return { props: { post } };
+    const resResult = await axios.get(`${process.env.BACKEND_ADDRESS}/results`);
+    const lastIndex = resResult.data.length - 1;
+    const result = resResult.data[lastIndex];
+
+    return { props: { post, result } };
   } catch (error) {
     console.log(error);
   }
