@@ -7,9 +7,9 @@ const Pagination = ({ onChange, posts }) => {
         previousLabel={"PV"}
         nextLabel={"NX"}
         breakLabel={"..."}
-        pageCount={posts.length / 6}
+        pageCount={posts.length / 9}
         marginPagesDisplayed={2}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={4}
         initialPage={0}
         onPageChange={onChange}
         pageClassName={

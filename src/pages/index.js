@@ -8,13 +8,20 @@ import Pagination from "../sections/pagination";
 import Footer from "../sections/footer";
 
 export default function Home({ posts, nextMatch, results }) {
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(0);
   const [postsPerPage, setPostsPerPage] = useState([]);
 
   useEffect(() => {
-    const indexOfFirstPost = current * 6;
-    setPostsPerPage(posts.slice(indexOfFirstPost, indexOfFirstPost + 6));
-  }, [current]);
+    const indexOfFirstPost = current * 9;
+    setPostsPerPage(
+      posts
+        .sort((a, b) => new Date(b.published_at) - new Date(a.published_at))
+        .map((post, index) =>
+          index === 0 ? { ...post, latest: true } : { ...post, latest: false }
+        )
+        .slice(indexOfFirstPost, indexOfFirstPost + 9)
+    );
+  }, [current, posts]);
 
   const onChange = (page) => {
     setCurrent(page.selected);

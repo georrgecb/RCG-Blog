@@ -13,7 +13,7 @@ const SinglePost = ({ title, cover, content, slug, date, latest }) => {
             <div className="relative">
               <div
                 style={{ height: "98%", width: "100%" }}
-                className="absolute z-40 duration-700 border-8 border-red-700 top-0 left-0 opacity-0 hover:opacity-70"
+                className="absolute z-40 duration-300 border-8 border-red-700 top-0 left-0 opacity-0 hover:opacity-70"
               />
 
               {cover && (

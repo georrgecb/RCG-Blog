@@ -1,9 +1,17 @@
 import axios from "axios";
-import React from "react";
 import Footer from "../sections/footer";
 import PageTemplate from "../sections/pageTemplate";
+import { useRouter } from "next/router";
+import Loading from "../sections/loading";
+import ReactMarkdown from "react-markdown";
 
 const Post = ({ post, lastResult }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <Loading />;
+  }
+
   return (
     <div className="">
       <PageTemplate
@@ -11,8 +19,11 @@ const Post = ({ post, lastResult }) => {
         pageCover={post.Cover[0].url}
         pageTitle={post.Title}
       />
-      <div className="container mx-auto py-10 flex justify-center items-center">
-        <p className="px-5 text-xl font-normal max-w-3xl">{post.Content}</p>
+      <div className="container mx-auto pb-20 flex justify-center items-center">
+        <div className="px-5 text-xl font-normal max-w-3xl">
+          {" "}
+          <ReactMarkdown children={post.Content} className="line-break" />
+        </div>
       </div>
       <Footer />
     </div>
@@ -32,7 +43,7 @@ export async function getStaticPaths() {
 
     return {
       paths,
-      fallback: false,
+      fallback: true,
     };
   } catch (error) {
     console.log(error);
