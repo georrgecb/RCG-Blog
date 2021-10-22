@@ -3,19 +3,22 @@ import SinglePost from "../components/singlePost";
 
 const BlogPosts = ({ posts }) => {
   return (
-    <section className="bg-gray-50 px-5">
-      <div className="container flex-wrap lg:flex-nowrap gap-5 mx-auto flex justify-between items-center">
+    <section className="bg-gray-50 px-5 pt-0 pb-10">
+      <div className="container grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mx-auto">
         {posts &&
-          posts.map((post) => (
-            <SinglePost
-              key={post.id}
-              title={post.Title}
-              content={post.Content}
-              cover={post.Cover[0]}
-              slug={post.Slug}
-              date={post.createdAt}
-            />
-          ))}{" "}
+          posts
+            .sort((a, b) => new Date(b.published_at) - new Date(a.published_at))
+            .map((post, index) => (
+              <SinglePost
+                latest={index === 0 ? true : false}
+                key={post.id}
+                title={post.Title}
+                content={post.Content}
+                cover={post.Cover[0]}
+                slug={post.Slug}
+                date={post.createdAt}
+              />
+            ))}{" "}
       </div>
     </section>
   );

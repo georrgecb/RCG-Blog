@@ -8,9 +8,9 @@ import FrontSlice from "../components/frontSlice";
 import moment from "moment";
 
 const data = [
-  { name: "REZULTATE", image: resultsImg, zIndex: "z-30" },
-  { name: "JUCATORI", image: playersImg, zIndex: "z-40" },
-  { name: "ISTORIE", image: historyImg, zIndex: "z-50" },
+  { name: "REZULTATE", image: resultsImg, zIndex: "z-30", path: "/rezultate" },
+  { name: "ECHIPA", image: playersImg, zIndex: "z-40", path: "/echipa" },
+  { name: "ISTORIE", image: historyImg, zIndex: "z-50", path: "/istorie" },
 ];
 const FrontPage = ({ nextMatch }) => {
   return (
@@ -64,7 +64,10 @@ const FrontPage = ({ nextMatch }) => {
                 </div>
               </div>
             </div>
-            <Image src={coverImg} className="filter grayscale z-10" />
+            <Image
+              src={coverImg}
+              className="transform-gpu blur-sm lg:blur-0 filter grayscale z-10"
+            />
           </div>
           {data.map((item, index) => (
             <FrontSlice
@@ -72,6 +75,7 @@ const FrontPage = ({ nextMatch }) => {
               zIndex={item.zIndex}
               title={item.name}
               src={item.image}
+              path={item.path}
             />
           ))}
         </div>

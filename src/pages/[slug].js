@@ -1,31 +1,20 @@
 import axios from "axios";
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import Header from "../sections/header/header";
+import Footer from "../sections/footer";
+import PageTemplate from "../sections/pageTemplate";
 
-const Post = ({ post, result }) => {
+const Post = ({ post, lastResult }) => {
   return (
-    <div>
-      <Header result={result} />
-
-      <div className="flex flex-col justify-center items-center">
-        <Image
-          src={post.Cover[0].url}
-          objectFit="cover"
-          objectPosition="top"
-          width="1600"
-          height="400"
-          className="w-full filter grayscale"
-        />
-        <h5 className="p-10 -mt-16 text-5xl font-extrabold text-black text-center filter drop-shadow-lg bg-white">
-          {" "}
-          {post.Title}
-        </h5>
-      </div>
+    <div className="">
+      <PageTemplate
+        lastResult={lastResult}
+        pageCover={post.Cover[0].url}
+        pageTitle={post.Title}
+      />
       <div className="container mx-auto py-10 flex justify-center items-center">
-        <p className="px-5 text-xl font-normal max-w-3xl"> {post.Content}</p>
+        <p className="px-5 text-xl font-normal max-w-3xl">{post.Content}</p>
       </div>
+      <Footer />
     </div>
   );
 };
@@ -43,7 +32,7 @@ export async function getStaticPaths() {
 
     return {
       paths,
-      fallback: true,
+      fallback: false,
     };
   } catch (error) {
     console.log(error);
@@ -59,11 +48,13 @@ export async function getStaticProps({ params }) {
     );
     const post = res.data[0];
 
-    const resResult = await axios.get(`${process.env.BACKEND_ADDRESS}/results`);
-    const lastIndex = resResult.data.length - 1;
-    const result = resResult.data[lastIndex];
+    const resResults = await axios.get(
+      `${process.env.BACKEND_ADDRESS}/results`
+    );
+    const lastIndex = resResults.data.length - 1;
+    const lastResult = resResults.data[lastIndex];
 
-    return { props: { post, result } };
+    return { props: { post, lastResult } };
   } catch (error) {
     console.log(error);
   }

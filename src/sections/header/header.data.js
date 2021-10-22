@@ -4,16 +4,16 @@ export default [
     label: "Acasa",
   },
   {
-    path: "rezultate",
+    path: "/rezultate",
     label: "Rezultate",
   },
   {
-    path: "echipa",
+    path: "/echipa",
     label: "Echipa",
   },
 
   {
-    path: "istorie",
+    path: "/istorie",
     label: "Istorie",
   },
 ];

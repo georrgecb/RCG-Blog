@@ -5,10 +5,10 @@ import React from "react";
 import Link from "next/link";
 import ResultWidget from "../../components/resultWidget";
 
-const Header = ({ result }) => {
+const Header = ({ lastResult, frontPage }) => {
   return (
-    <section className="bg-black py-7">
-      <div className="container mx-auto flex justify-between ">
+    <section className={`bg-black p-5 ${frontPage && "md:hidden"}`}>
+      <div className="container mx-auto flex  md:px-0 justify-between">
         <Image src={logo} width="100" height="100" />
         <div className="flex gap-10 justify-center items-center mx-auto ">
           {data.map((item, index) => (
@@ -21,7 +21,11 @@ const Header = ({ result }) => {
             </Link>
           ))}
         </div>
-        <ResultWidget result={result} />
+        <div className="hidden xl:block">
+          {!frontPage && lastResult ? (
+            <ResultWidget lastResult={lastResult} />
+          ) : null}
+        </div>
       </div>
     </section>
   );
