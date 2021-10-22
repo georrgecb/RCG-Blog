@@ -9,7 +9,7 @@ const Rezultate = ({ results }) => {
   return (
     <div>
       <PageTemplate pageCover={resultsImg} pageTitle="Rezultate" />
-      <div className="pb-20">
+      <div className="-mt-10 pb-10">
         {results.map((result) => (
           <FullResult result={result} />
         ))}

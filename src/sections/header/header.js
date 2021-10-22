@@ -1,7 +1,7 @@
 import logo from "../../assets/logo.jpeg";
 import Image from "next/image";
 import data from "./header.data";
-import { FaFacebookSquare, FaYoutube, FaInstagram } from "react-icons/fa";
+import { FaFacebookSquare, FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import React, { useState } from "react";
 import Link from "next/link";
