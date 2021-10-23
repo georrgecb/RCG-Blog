@@ -7,7 +7,6 @@ import ReactMarkdown from "react-markdown";
 
 const Post = ({ post, lastResult }) => {
   const router = useRouter();
-  const stringContent = String(post.Content);
   if (router.isFallback) {
     return <Loading />;
   }
@@ -21,7 +20,7 @@ const Post = ({ post, lastResult }) => {
       />
       <div className="container mx-auto pb-20 flex justify-center items-center">
         <div className="px-5 text-xl font-normal max-w-3xl leading-normal line-break">
-          <ReactMarkdown>{stringContent}</ReactMarkdown>
+          <ReactMarkdown>{String(post.Content)}</ReactMarkdown>
         </div>
       </div>
       <Footer />
