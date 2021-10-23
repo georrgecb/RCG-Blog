@@ -2,7 +2,7 @@ import React from "react";
 
 const Result = ({ homeTeam, homeTeamScore, awayTeam, awayTeamScore }) => {
   return (
-    <div className="bg-black grid grid-cols-3 p-6 lg:p-16 h-full w-full">
+    <div className="bg-black grid grid-cols-3 p-6 lg:p-16 h-full w-full justify-between">
       <p className="text-white col-span-2 font-bold text-xl">{homeTeam}</p>
       <p className="text-white bg-red-700 text-center font-black text-xl w-10 ml-auto">
         {homeTeamScore}

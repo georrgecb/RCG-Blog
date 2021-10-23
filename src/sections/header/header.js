@@ -1,4 +1,4 @@
-import logo from "../../assets/logo.jpeg";
+import grivita from "../../assets/grivita-font.jpg";
 import Image from "next/image";
 import data from "./header.data";
 import { FaFacebookSquare, FaYoutube } from "react-icons/fa";
@@ -14,7 +14,16 @@ const Header = ({ lastResult, frontPage }) => {
   return (
     <section className={`bg-black z-50 p-5 ${frontPage && "md:hidden"}`}>
       <div className="container top-0 mx-auto flex md:px-0 justify-between items-center">
-        <Image src={logo} width="100" height="100" />
+        <Link href="/">
+          <Image
+            src={grivita}
+            width="229"
+            className="cursor-pointer"
+            height="70"
+            quality="100"
+            alt="logo"
+          />
+        </Link>
         <div className="md:hidden">
           <Hamburger
             size={40}
@@ -23,11 +32,11 @@ const Header = ({ lastResult, frontPage }) => {
             color="white"
           />
         </div>
-        <div className="hidden md:flex gap-10 justify-center items-center mx-auto ">
+        <div className="hidden md:flex justify-center items-center mx-auto">
           {data.map((item, index) => (
             <Link key={index} href={item.path}>
               <a>
-                <p className="text-white font-extrabold text-xl hvr-underline-from-left">
+                <p className="text-white font-extrabold text-xl hvr-underline-from-left mx-5">
                   {item.label}
                 </p>
               </a>

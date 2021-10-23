@@ -4,7 +4,7 @@ import { FaFacebookSquare, FaYoutube } from "react-icons/fa";
 const LogoBar = () => {
   return (
     <div className="hidden md:flex flex-col justify-between">
-      <div className="flex bg-red-800 py-4 w-full justify-evenly items-center">
+      <div className="flex bg-red-800 py-4 w-24 h-full justify-evenly items-center ">
         <a
           href="https://www.facebook.com/rcgrivita"
           target="_blank"

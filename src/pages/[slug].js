@@ -13,17 +13,17 @@ const Post = ({ post, lastResult }) => {
   }
 
   return (
-    <div className="">
+    <div>
       <PageTemplate
         lastResult={lastResult}
         pageCover={post.Cover[0].url}
         pageTitle={post.Title}
       />
       <div className="container mx-auto pb-20 flex justify-center items-center">
-        <div className="px-5 text-xl font-normal max-w-3xl">
+        <p className="px-5 text-xl font-normal max-w-3xl leading-normal">
           {" "}
           <ReactMarkdown children={post.Content} className="line-break" />
-        </div>
+        </p>
       </div>
       <Footer />
     </div>

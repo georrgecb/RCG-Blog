@@ -3,13 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 import moment from "moment";
 import "moment/locale/ro";
+import ReactMarkdown from "react-markdown";
 
 const SinglePost = ({ title, cover, content, slug, date, latest }) => {
+  const snippet = content.includes("**")
+    ? content.length > 150
+      ? `${content.slice(2, 150)}...`
+      : content
+    : content.length > 150
+    ? `${content.slice(0, 150)}...`
+    : content;
+
   return (
     <div>
       <Link href={`/${slug}`}>
         <a>
-          <div className="w-full bg-gray-50 filter drop-shadow-lg flex flex-col h-full">
+          <div className="w-full bg-gray-50 filter drop-shadow-md flex flex-col h-full">
             <div className="relative">
               <div
                 style={{ height: "98%", width: "100%" }}
@@ -36,12 +45,12 @@ const SinglePost = ({ title, cover, content, slug, date, latest }) => {
               </p>
             </div>
             <div className="p-5 flex flex-col justify-between items-start h-full">
-              <h5 className="text-3xl font-black text-gray-900 pt-3 pb-6">
+              <h5 className="text-2xl font-black text-gray-900 pt-3 pb-6">
                 {title}
               </h5>
 
               <p className="font-normal text-lg pb-6">
-                {content.length > 200 ? `${content.slice(0, 200)}...` : content}
+                <ReactMarkdown children={snippet} className="line-break" />
               </p>
               <p className="text-black text-lg border-2 p-3 mb-3 hover:bg-gray-200 duration-300 inline-block">
                 Citeste continuarea

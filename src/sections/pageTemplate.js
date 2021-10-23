@@ -16,7 +16,7 @@ export default function PageTemplate({ pageCover, pageTitle, lastResult }) {
           height="400"
           className="w-full filter grayscale"
         />
-        <h5 className="p-10 -mt-16 text-3xl lg:text-4xl xl:text-5xl font-extrabold text-black text-center filter drop-shadow-lg bg-white">
+        <h5 className="p-5 md:p-10 md:-mt-16 text-3xl lg:text-4xl xl:text-5xl font-extrabold text-black text-center filter drop-shadow-md bg-white w-full md:max-w-3xl lg:max-w-4xl">
           {" "}
           {pageTitle}
         </h5>
