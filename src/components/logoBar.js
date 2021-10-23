@@ -3,8 +3,8 @@ import { FaFacebookSquare, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 const LogoBar = () => {
   return (
-    <div className="hidden md:flex flex-col justify-between">
-      <div className="flex bg-red-800 py-4 w-24 h-full justify-evenly items-center ">
+    <div className="hidden bg-red-700 md:flex flex-col justify-between items-start">
+      <div className="flex bg-red-800 h-16 w-24 justify-evenly items-center">
         <Link href="https://www.facebook.com/rcgrivita" passHref={true}>
           <a>
             <FaFacebookSquare className="text-2xl text-white" />
@@ -19,9 +19,9 @@ const LogoBar = () => {
           </a>
         </Link>
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-stretch h-full">
         <h1
-          className="text-8xl cursor-default py-5 bg-red-700 text-white transform rotate-180 hvr-sweep-to-top"
+          className="text-8xl cursor-default py-4 bg-red-700 text-white text-center transform rotate-180 hvr-sweep-to-top"
           style={styles.verticalText}
         >
           RC GRIVITA

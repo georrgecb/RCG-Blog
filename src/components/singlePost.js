@@ -3,16 +3,18 @@ import Image from "next/image";
 import Link from "next/link";
 import moment from "moment";
 import "moment/locale/ro";
-import Markdown from "markdown-to-jsx";
+import ReactMarkdown from "react-markdown";
 
 const SinglePost = ({ title, cover, content, slug, date, latest }) => {
-  const snippet = content.includes("**")
-    ? content.length > 150
-      ? `${content.slice(2, 150)}...`
+  const stringContent = String(
+    content.includes("**")
+      ? content.length > 150
+        ? `${content.slice(2, 150)}...`
+        : content
+      : content.length > 150
+      ? `${content.slice(0, 150)}...`
       : content
-    : content.length > 150
-    ? `${content.slice(0, 150)}...`
-    : content;
+  );
 
   return (
     <div>
@@ -51,7 +53,7 @@ const SinglePost = ({ title, cover, content, slug, date, latest }) => {
               </h5>
 
               <div className="font-normal text-lg pb-6">
-                <Markdown>{snippet}</Markdown>
+                <ReactMarkdown>{stringContent}</ReactMarkdown>
               </div>
               <p className="text-black text-lg border-2 p-3 mb-3 hover:bg-gray-200 duration-300 inline-block">
                 Citeste continuarea

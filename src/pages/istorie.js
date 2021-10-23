@@ -4,16 +4,17 @@ import axios from "axios";
 import historyImg from "../assets/players.jpg";
 import PageTemplate from "../sections/pageTemplate";
 import Footer from "../sections/footer";
-import Markdown from "markdown-to-jsx";
+import ReactMarkdown from "react-markdown";
 
 const Istorie = ({ history, trophies }) => {
+  const stringContent = String(history.Content);
   return (
     <div>
       <PageTemplate pageCover={historyImg} pageTitle={"Istoria Clubului"} />
 
       <div className="container mx-auto pb-20 flex flex-col justify-center items-center">
         <div className="px-5 text-xl font-normal max-w-3xl leading-normal">
-          <Markdown>{history.Content}</Markdown>
+          <ReactMarkdown>{stringContent}</ReactMarkdown>
         </div>
         <Trophies trophies={trophies} />
       </div>

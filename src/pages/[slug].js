@@ -21,7 +21,7 @@ const Post = ({ post, lastResult }) => {
       />
       <div className="container mx-auto pb-20 flex justify-center items-center">
         <div className="px-5 text-xl font-normal max-w-3xl leading-normal line-break">
-          <ReactMarkdown children={stringContent} />
+          <ReactMarkdown>{stringContent}</ReactMarkdown>
         </div>
       </div>
       <Footer />
