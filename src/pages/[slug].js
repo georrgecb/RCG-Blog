@@ -22,7 +22,7 @@ const Post = ({ post, lastResult }) => {
       />
       <div className="container mx-auto pb-20 flex justify-center items-center">
         <div className="px-5 text-xl font-normal max-w-3xl leading-normal">
-          {/* <ReactMarkdown children={content} className="line-break" /> */}
+          <ReactMarkdown children={content} className="line-break" />
         </div>
       </div>
       <Footer />
