@@ -3,11 +3,10 @@ import Footer from "../sections/footer";
 import PageTemplate from "../sections/pageTemplate";
 import { useRouter } from "next/router";
 import Loading from "../sections/loading";
-import ReactMarkdown from "react-markdown";
+import Markdown from "markdown-to-jsx";
 
 const Post = ({ post, lastResult }) => {
   const router = useRouter();
-  const content = post.Content;
 
   if (router.isFallback) {
     return <Loading />;
@@ -22,7 +21,7 @@ const Post = ({ post, lastResult }) => {
       />
       <div className="container mx-auto pb-20 flex justify-center items-center">
         <div className="px-5 text-xl font-normal max-w-3xl leading-normal">
-          <ReactMarkdown children={content} className="line-break" />
+          <Markdown>{post.Content}</Markdown>
         </div>
       </div>
       <Footer />
