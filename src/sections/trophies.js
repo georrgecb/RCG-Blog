@@ -20,7 +20,7 @@ const Trophies = ({ trophies }) => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5 pt-20 justify-center items-stretch ">
       <div>
         <SingleTrophy
-          // icon={data[0]}
+          icon={data[0]}
           cupNumber={SuperLigaYears.length}
           cup={"SuperLiga"}
           years={SuperLigaYears.join(", ")}
@@ -28,7 +28,7 @@ const Trophies = ({ trophies }) => {
       </div>
       <div>
         <SingleTrophy
-          // icon={data[2]}
+          icon={data[2]}
           cupNumber={EuropeanCupYears.length}
           cup={"Cupa Campionilor Europeni"}
           years={EuropeanCupYears.join(", ")}
@@ -36,7 +36,7 @@ const Trophies = ({ trophies }) => {
       </div>
       <div>
         <SingleTrophy
-          // icon={data[1]}
+          icon={data[1]}
           cupNumber={CupYears.length}
           cup={"Cupa Romaniei"}
           years={CupYears.join(", ")}
