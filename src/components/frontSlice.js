@@ -20,6 +20,7 @@ const FrontSlice = ({ zIndex, title, src, path }) => {
           objectFit="cover"
           objectPosition="center"
           layout="fill"
+          alt="cover photo"
         />
       </div>
     </Link>

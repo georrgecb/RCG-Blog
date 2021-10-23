@@ -1,25 +1,23 @@
 import React from "react";
 import { FaFacebookSquare, FaYoutube } from "react-icons/fa";
-
+import Link from "next/link";
 const LogoBar = () => {
   return (
     <div className="hidden md:flex flex-col justify-between">
       <div className="flex bg-red-800 py-4 w-24 h-full justify-evenly items-center ">
-        <a
-          href="https://www.facebook.com/rcgrivita"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {" "}
-          <FaFacebookSquare className="text-2xl text-white" />
-        </a>
-        <a
+        <Link href="https://www.facebook.com/rcgrivita" passHref={true}>
+          <a>
+            <FaFacebookSquare className="text-2xl text-white" />
+          </a>
+        </Link>
+        <Link
           href="https://www.youtube.com/channel/UCaR6IitBBLZZMRlHmbqNIkQ/videos"
-          target="_blank"
-          rel="noreferrer"
+          passHref={true}
         >
-          <FaYoutube className="text-2xl text-white" />
-        </a>
+          <a>
+            <FaYoutube className="text-2xl text-white" />
+          </a>
+        </Link>
       </div>
       <div className="flex justify-center items-center">
         <h1

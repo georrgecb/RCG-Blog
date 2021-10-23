@@ -13,7 +13,6 @@ const Istorie = ({ history, trophies }) => {
 
       <div className="container mx-auto pb-20 flex flex-col justify-center items-center">
         <div className="px-5 text-xl font-normal max-w-3xl leading-normal">
-          {" "}
           <ReactMarkdown children={history.Content} className="line-break" />
         </div>
         <Trophies trophies={trophies} />

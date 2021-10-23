@@ -44,6 +44,7 @@ const MatchPoster = ({ nextMatch }) => {
       </div>
       <Image
         src={coverImg}
+        alt="match poster background"
         className="transform-gpu blur-sm lg:blur-0 filter grayscale z-10"
       />
     </div>

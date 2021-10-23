@@ -30,6 +30,7 @@ const SinglePost = ({ title, cover, content, slug, date, latest }) => {
                   src={cover.formats.medium.url}
                   height={500}
                   width={800}
+                  alt="article cover photo"
                   objectFit="cover"
                   className="filter grayscale"
                 />
