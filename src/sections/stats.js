@@ -26,7 +26,7 @@ const Stats = ({ results, nextMatch }) => {
       <div className="w-1/4 hidden xl:flex flex-col bg-red-700 justify-center">
         <CountdownWidget nextMatch={nextMatch} />
         <h5 className="px-2 font-medium text-lg text-white text-center">
-          pana la urmatoarea partida
+          pana la urmatoarea partida.
         </h5>
       </div>
     </div>

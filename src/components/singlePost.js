@@ -49,9 +49,9 @@ const SinglePost = ({ title, cover, content, slug, date, latest }) => {
                 {title}
               </h5>
 
-              <p className="font-normal text-lg pb-6">
+              <div className="font-normal text-lg pb-6">
                 <ReactMarkdown children={snippet} className="line-break" />
-              </p>
+              </div>
               <p className="text-black text-lg border-2 p-3 mb-3 hover:bg-gray-200 duration-300 inline-block">
                 Citeste continuarea
               </p>

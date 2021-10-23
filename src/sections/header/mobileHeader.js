@@ -1,68 +1,35 @@
 import React from "react";
-import Modal from "react-modal";
 import data from "./header.data";
 import Link from "next/link";
-import Hamburger from "hamburger-react";
+import { BsArrowRight } from "react-icons/bs";
+
+import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
+import "react-pro-sidebar/dist/css/styles.css";
 
 const MobileHeader = ({ isOpen, setOpen }) => {
   return (
-    <Modal
-      shouldCloseOnEsc={true}
-      onRequestClose={() => setOpen(false)}
-      ariaHideApp={false}
-      shouldFocusAfterRender={true}
-      shouldCloseOnOverlayClick={true}
-      isOpen={isOpen}
-      style={styles.modal}
+    <ProSidebar
+      collapsed={false}
+      toggled={isOpen}
+      breakPoint="md"
+      onToggle={() => setOpen(!isOpen)}
     >
-      <div className="flex justify-end w-full mt-6 items-end">
-        <Hamburger
-          size={40}
-          toggled={isOpen}
-          toggle={() => setOpen(!isOpen)}
-          color="white"
-        />
-      </div>
-      <div className=" h-full w-full pb-6 flex flex-col justify-center items-center">
+      <Menu className="h-full mt-20 flex flex-col justify-start items-start">
         {data.map((item, index) => (
-          <Link key={index} href={item.path}>
-            <a>
-              <p className="text-white py-5 font-extrabold text-4xl hvr-underline-from-left">
+          <MenuItem
+            key={index}
+            icon={<BsArrowRight className="text-3xl text-white" />}
+          >
+            <Link key={index} href={item.path}>
+              <p className="text-white font-extrabold py-3 hover:text-red-700 duration-300 text-3xl ml-2">
                 {item.label}
               </p>
-            </a>
-          </Link>
+            </Link>
+          </MenuItem>
         ))}
-      </div>
-    </Modal>
+      </Menu>
+    </ProSidebar>
   );
-};
-
-const styles = {
-  modal: {
-    overlay: {
-      position: "fixed",
-      zIndex: 100,
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: "rgba(0, 0, 0, 1)",
-    },
-    content: {
-      position: "fixed",
-
-      top: 0,
-      left: 0,
-      height: "100%",
-      width: "100%",
-      background: "",
-      overflow: "hidden",
-      WebkitOverflowScrolling: "touch",
-      outline: "none",
-      border: "none",
-    },
-  },
 };
 
 export default MobileHeader;

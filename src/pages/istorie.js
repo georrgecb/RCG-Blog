@@ -12,10 +12,10 @@ const Istorie = ({ history, trophies }) => {
       <PageTemplate pageCover={historyImg} pageTitle={"Istoria Clubului"} />
 
       <div className="container mx-auto pb-20 flex flex-col justify-center items-center">
-        <p className="px-5 text-xl font-normal max-w-3xl leading-normal">
+        <div className="px-5 text-xl font-normal max-w-3xl leading-normal">
           {" "}
           <ReactMarkdown children={history.Content} className="line-break" />
-        </p>
+        </div>
         <Trophies trophies={trophies} />
       </div>
 

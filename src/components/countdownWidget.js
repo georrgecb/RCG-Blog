@@ -1,22 +1,20 @@
 import React from "react";
+import Link from "next/link";
 import Countdown from "react-countdown";
 
 const CountdownWidget = ({ nextMatch }) => {
   const Completionist = () => (
-    <span className="text-md text-center">
-      Meciul {nextMatch.HomeTeam} - {nextMatch.AwayTeam} a inceput. Daca s-a
-      intamplat sa il ratezi, intra pe canalul nostru de{" "}
-      <a
+    <h5 className="px-2 font-medium text-lg text-white text-center">
+      {nextMatch.HomeTeam} - {nextMatch.AwayTeam} s-a incheiat. <br />
+      Intra pe canalul nostru{" "}
+      <Link
         href="https://www.youtube.com/channel/UCaR6IitBBLZZMRlHmbqNIkQ"
-        target="_blank"
-        rel="noreferrer"
-        className="font-bold text-red-700"
+        className="font-bold"
+        passHref={true}
       >
-        {" "}
         Youtube
-      </a>
-      . Ne vedem la urmatorul meci!
-    </span>
+      </Link>
+    </h5>
   );
 
   return (
