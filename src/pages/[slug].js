@@ -20,7 +20,7 @@ const Post = ({ post, lastResult }) => {
         pageTitle={post.Title}
       />
       <div className="container mx-auto pb-20 flex justify-center items-center">
-        <div className="px-5 text-xl font-normal max-w-3xl leading-normal">
+        <div className="px-5 text-xl font-normal max-w-3xl leading-normal ">
           <Markdown>{post.Content}</Markdown>
         </div>
       </div>

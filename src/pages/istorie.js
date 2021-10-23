@@ -4,7 +4,7 @@ import axios from "axios";
 import historyImg from "../assets/players.jpg";
 import PageTemplate from "../sections/pageTemplate";
 import Footer from "../sections/footer";
-import ReactMarkdown from "react-markdown";
+import Markdown from "markdown-to-jsx";
 
 const Istorie = ({ history, trophies }) => {
   return (
@@ -13,7 +13,7 @@ const Istorie = ({ history, trophies }) => {
 
       <div className="container mx-auto pb-20 flex flex-col justify-center items-center">
         <div className="px-5 text-xl font-normal max-w-3xl leading-normal">
-          <ReactMarkdown children={history.Content} className="line-break" />
+          <Markdown>{history.Content}</Markdown>
         </div>
         <Trophies trophies={trophies} />
       </div>

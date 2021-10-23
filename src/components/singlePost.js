@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import moment from "moment";
 import "moment/locale/ro";
-import ReactMarkdown from "react-markdown";
+import Markdown from "markdown-to-jsx";
 
 const SinglePost = ({ title, cover, content, slug, date, latest }) => {
   const snippet = content.includes("**")
@@ -51,7 +51,7 @@ const SinglePost = ({ title, cover, content, slug, date, latest }) => {
               </h5>
 
               <div className="font-normal text-lg pb-6">
-                <ReactMarkdown children={snippet} className="line-break" />
+                <Markdown>{snippet}</Markdown>
               </div>
               <p className="text-black text-lg border-2 p-3 mb-3 hover:bg-gray-200 duration-300 inline-block">
                 Citeste continuarea
