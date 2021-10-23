@@ -12,7 +12,7 @@ import MobileHeader from "./mobileHeader";
 const Header = ({ lastResult, frontPage }) => {
   const [isOpen, setOpen] = useState(false);
   return (
-    <section className={`bg-black z-50 p-5 ${frontPage && "md:hidden"}`}>
+    <section className={`bg-black z-50 p-7 ${frontPage && "md:hidden"}`}>
       <div className="md:hidden absolute top-0 left-0">
         <MobileHeader isOpen={isOpen} setOpen={setOpen} />
       </div>
@@ -31,7 +31,7 @@ const Header = ({ lastResult, frontPage }) => {
         </Link>
         <div className="md:hidden">
           <Hamburger
-            size={40}
+            size={30}
             toggled={isOpen}
             toggle={() => setOpen(!isOpen)}
             color="white"
