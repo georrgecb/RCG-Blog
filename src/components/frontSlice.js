@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const FrontSlice = ({ zIndex, title, src, path }) => {
   return (
-    <Link href={path}>
+    <Link href={path} passHref={true}>
       <div
         className={`relative cursor-pointer hidden lg:flex h-screen w-1/2 transform hover:scale-150 duration-300 items-center justify-start container-slice ${zIndex}`}
       >

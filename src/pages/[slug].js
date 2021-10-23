@@ -3,11 +3,11 @@ import Footer from "../sections/footer";
 import PageTemplate from "../sections/pageTemplate";
 import { useRouter } from "next/router";
 import Loading from "../sections/loading";
-import Markdown from "markdown-to-jsx";
+import ReactMarkdown from "react-markdown";
 
 const Post = ({ post, lastResult }) => {
   const router = useRouter();
-
+  const stringContent = String(post.Content);
   if (router.isFallback) {
     return <Loading />;
   }
@@ -20,8 +20,8 @@ const Post = ({ post, lastResult }) => {
         pageTitle={post.Title}
       />
       <div className="container mx-auto pb-20 flex justify-center items-center">
-        <div className="px-5 text-xl font-normal max-w-3xl leading-normal ">
-          <Markdown>{post.Content}</Markdown>
+        <div className="px-5 text-xl font-normal max-w-3xl leading-normal line-break">
+          <ReactMarkdown children={stringContent} />
         </div>
       </div>
       <Footer />
