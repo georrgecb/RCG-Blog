@@ -22,13 +22,13 @@ const MatchPoster = ({ nextMatch }) => {
 
         <div className="flex flex-col justify-center items-center">
           <h3 className="text-red-700 text-4xl lg:text-2xl filter drop-shadow-md">
-            {moment(nextMatch?.Date).format("dddd")}
+            {moment(nextMatch?.Date).locale("ro").format("dddd")}
           </h3>
           <h3 className="bg-clip-text text-transparent bg-gradient-to-t from-gray-300 to-white text-5xl sm:text-7xl lg:text-6xl py-5 filter drop-shadow-md hvr-bob">
-            {moment(nextMatch?.Date).format("ll")}
+            {moment(nextMatch?.Date).locale("ro").format("ll")}
           </h3>
           <h3 className="text-red-700 text-4xl lg:text-2xl filter  drop-shadow-md">
-            ora {moment(nextMatch?.Date).format("LT")}
+            ora {moment(nextMatch?.Date).locale("ro").format("LT")}
           </h3>
         </div>
         <div className="text-center">

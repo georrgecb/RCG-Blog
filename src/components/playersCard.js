@@ -12,12 +12,12 @@ const PlayersCard = ({ position, filterBy, players, highlight }) => {
       >
         {position.toUpperCase()}
       </h3>
-      <div className="flex flex-col justify-around items-stretch">
+      <div className="flex flex-col justify-around items-stretch overflow-hidden">
         {players
           .filter((player) => player.Position === filterBy)
           .map((player) => (
             <div key={player.id} className="">
-              <h3 className="text-xl text-gray-50 text-center font-semibold  py-3 transform hover:scale-125 duration-300 cursor-default">
+              <h3 className="text-lg lg:text-xl text-gray-50 text-center font-semibold  py-3 transform hover:scale-125 duration-300 cursor-default">
                 {player.Name} {player.Captain && "(Capitan)"}
               </h3>
             </div>
