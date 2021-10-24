@@ -8,7 +8,7 @@ const Stats = ({ results, nextMatch }) => {
       <h5 className="absolute hidden lg:block text-gray-300 top-14 left-16 font-medium text-lg">
         Ultimele rezultate:
       </h5>
-      <div className="flex flex-col lg:flex-row xl:w-3/4">
+      <div className="flex flex-col-reverse lg:flex-row xl:w-3/4">
         {results.slice(-3).map((result, index) => (
           <div key={result.id} className="flex items-center">
             {index !== 0 && (

@@ -16,8 +16,8 @@ const Footer = () => {
           </Link>
         ))}
       </div>
-      <p className="text-white text-md mt-10">
-        Copyright {new Date().getFullYear()} © Rugby Club Grivita
+      <p className="text-white text-center text-md mt-10">
+        {new Date().getFullYear()} © Rugby Club Grivita
       </p>
     </div>
   );

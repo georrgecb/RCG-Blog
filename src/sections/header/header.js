@@ -12,7 +12,7 @@ import MobileHeader from "./mobileHeader";
 const Header = ({ lastResult, frontPage }) => {
   const [isOpen, setOpen] = useState(false);
   return (
-    <section className={`bg-black z-50 p-7 ${frontPage && "md:hidden"}`}>
+    <section className={`bg-black z-50 p-3 md:p-7 ${frontPage && "md:hidden"}`}>
       <div className="md:hidden absolute top-0 left-0">
         <MobileHeader isOpen={isOpen} setOpen={setOpen} />
       </div>
@@ -22,8 +22,8 @@ const Header = ({ lastResult, frontPage }) => {
             <Image
               src={grivita}
               width="229"
-              className="cursor-pointer"
               height="70"
+              className="cursor-pointer"
               quality="100"
               alt="logo"
             />
@@ -37,7 +37,7 @@ const Header = ({ lastResult, frontPage }) => {
             color="white"
           />
         </div>
-        <div className="hidden md:flex justify-center items-center mx-auto">
+        <div className="hidden md:flex justify-center items-center xl:mx-auto">
           {data.map((item, index) => (
             <Link key={index} href={item.path}>
               <a>

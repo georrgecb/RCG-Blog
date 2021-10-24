@@ -5,7 +5,7 @@ import coverImg from "../assets/cover.jpg";
 
 const MatchPoster = ({ nextMatch }) => {
   return (
-    <div className="relative h-screen">
+    <div className="relative md:h-screen">
       <div className="absolute top-0 left-0 w-full h-full z-20 flex flex-col justify-between items-center py-10">
         <div className="text-center">
           <p className="text-white font-bold filter drop-shadow-md text-lg">

@@ -3,12 +3,12 @@ import React from "react";
 const PlayersCard = ({ position, filterBy, players, highlight }) => {
   return (
     <div
-      className={`relative  rounded-lg py-10 bg-gray-900 bg-blend-overlay card-bg bg-local bg-no-repeat bg-cover ${
+      className={`relative rounded-lg py-10 bg-gray-900 bg-blend-overlay card-bg bg-local bg-no-repeat bg-cover ${
         highlight ? "border-t-8 border-red-700" : ""
       }`}
     >
       <h3
-        className={`absolute bottom-1 right-3 text-4xl md:text-6xl overflow-hidden text-center text-white opacity-10`}
+        className={`absolute bottom-1 right-3 text-6xl sm:text-4xl lg:text-6xl overflow-hidden text-center text-white opacity-10`}
       >
         {position.toUpperCase()}
       </h3>
@@ -18,7 +18,7 @@ const PlayersCard = ({ position, filterBy, players, highlight }) => {
           .map((player) => (
             <div key={player.id} className="">
               <h3 className="text-xl text-gray-50 text-center font-semibold  py-3 transform hover:scale-125 duration-300 cursor-default">
-                {player.Name}
+                {player.Name} {player.Captain && "(Capitan)"}
               </h3>
             </div>
           ))}

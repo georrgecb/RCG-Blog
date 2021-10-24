@@ -9,7 +9,7 @@ const Team = ({ players }) => {
   return (
     <div>
       <PageTemplate pageCover={teamImg} pageTitle="Echipa actuala" />
-      <div className="container mx-auto pb-20 px-5 md:px-0 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 justify-center">
+      <div className="container mx-auto pb-20 px-5 md:px-0 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 justify-center">
         <PlayersCard players={players} filterBy="pilier" position="pilier" />
         <PlayersCard players={players} filterBy="aripa" position="aripa" />
         <PlayersCard players={players} filterBy="centru" position="centru" />

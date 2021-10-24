@@ -10,9 +10,11 @@ const Rezultate = ({ results }) => {
     <div>
       <PageTemplate pageCover={resultsImg} pageTitle="Rezultate" />
       <div className="-mt-10 pb-10">
-        {results.map((result) => (
-          <FullResult key={result.id} result={result} />
-        ))}
+        {results
+          .sort((a, b) => new Date(b.published_at) - new Date(a.published_at))
+          .map((result) => (
+            <FullResult key={result.id} result={result} />
+          ))}
       </div>
       <Footer />
     </div>
