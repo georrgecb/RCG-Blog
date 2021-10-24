@@ -7,14 +7,13 @@ import Footer from "../sections/footer";
 import ReactMarkdown from "react-markdown";
 
 const Istorie = ({ history, trophies }) => {
-  const stringContent = String(history.Content);
   return (
     <div>
       <PageTemplate pageCover={historyImg} pageTitle={"Istoria Clubului"} />
 
       <div className="container mx-auto pb-20 flex flex-col justify-center items-center">
-        <div className="px-5 text-xl font-normal max-w-3xl leading-normal">
-          <ReactMarkdown>{stringContent}</ReactMarkdown>
+        <div className="px-5 text-xl font-normal max-w-3xl leading-normal line-break">
+          <ReactMarkdown>{String(history.Content)}</ReactMarkdown>
         </div>
         <Trophies trophies={trophies} />
       </div>
