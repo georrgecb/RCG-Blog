@@ -17,7 +17,7 @@ export default function PageTemplate({ pageCover, pageTitle, lastResult }) {
           alt="page cover photo"
           className="w-full filter grayscale"
         />
-        <h5 className="p-5 md:p-10 md:-mt-16 text-3xl lg:text-4xl xl:text-5xl font-extrabold text-black text-center filter drop-shadow-md bg-white w-full md:max-w-3xl lg:max-w-4xl">
+        <h5 className="p-5 md:p-10 md:-mt-16 text-4xl xl:text-5xl font-extrabold text-black text-center filter drop-shadow-md bg-white w-full md:w-auto md:max-w-3xl lg:max-w-4xl">
           {pageTitle}
         </h5>
       </div>
