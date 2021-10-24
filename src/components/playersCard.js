@@ -8,7 +8,7 @@ const PlayersCard = ({ position, filterBy, players, highlight }) => {
       }`}
     >
       <h3
-        className={`absolute bottom-1 right-3 text-6xl sm:text-4xl lg:text-6xl overflow-hidden text-center text-white opacity-10`}
+        className={`absolute bottom-1 right-3 text-5xl sm:text-4xl lg:text-6xl overflow-hidden text-center text-white opacity-10`}
       >
         {position.toUpperCase()}
       </h3>
