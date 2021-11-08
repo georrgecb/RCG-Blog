@@ -17,7 +17,7 @@ const SinglePost = ({ title, cover, content, slug, date, latest }) => {
   );
 
   return (
-    <div data-aos="slide-up">
+    <div>
       <Link href={`/${slug}`}>
         <a>
           <div className="w-full bg-gray-50 filter drop-shadow-md flex flex-col h-full">

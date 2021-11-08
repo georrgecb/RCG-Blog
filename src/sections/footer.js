@@ -4,10 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div
-      data-aos="fade"
-      className="bg-black p-16 flex flex-col justify-center items-center"
-    >
+    <div className="bg-black p-16 flex flex-col justify-center items-center">
       <div className="flex container justify-center items-center mx-auto ">
         {data.map((item, index) => (
           <Link key={index} href={item.path}>

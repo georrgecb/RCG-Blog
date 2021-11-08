@@ -2,7 +2,7 @@ import React from "react";
 import ReactPaginate from "react-paginate";
 const Pagination = ({ onChange, posts }) => {
   return (
-    <div data-aos="fade" className="bg-black">
+    <div className="bg-black">
       <ReactPaginate
         previousLabel={"PV"}
         nextLabel={"NX"}
