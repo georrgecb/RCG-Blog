@@ -16,7 +16,7 @@ export default function Home({ posts, nextMatch, results }) {
   const [postsPerPage, setPostsPerPage] = useState([]);
 
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 2000 });
     const indexOfFirstPost = current * 9;
     setPostsPerPage(
       posts
