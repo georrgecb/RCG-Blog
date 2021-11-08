@@ -4,7 +4,10 @@ import Result from "../components/result";
 
 const Stats = ({ results, nextMatch }) => {
   return (
-    <div className="relative bg-gray-50 py-10 flex flex-col xl:flex-row justify-between">
+    <div
+      data-aos="flip-up"
+      className="relative bg-gray-50 py-10 flex flex-col xl:flex-row justify-between"
+    >
       <h5 className="absolute hidden lg:block text-gray-300 top-14 left-16 font-medium text-lg">
         Ultimele rezultate:
       </h5>

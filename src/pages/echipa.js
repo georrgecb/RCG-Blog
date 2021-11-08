@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import teamImg from "../assets/players.jpg";
 import PageTemplate from "../sections/pageTemplate";
 import Footer from "../sections/footer";
 import axios from "axios";
 import PlayersCard from "../components/playersCard";
+import Head from "next/head";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Team = ({ players }) => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <div>
+      <Head>
+        <title>RC Grivita - Echipa actuala</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <PageTemplate pageCover={teamImg} pageTitle="Echipa actuala" />
       <div className="container mx-auto pb-20 px-5 md:px-0 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 justify-center">
         <PlayersCard players={players} filterBy="pilier" position="pilier" />

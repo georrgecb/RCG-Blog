@@ -5,10 +5,16 @@ import historyImg from "../assets/players.jpg";
 import PageTemplate from "../sections/pageTemplate";
 import Footer from "../sections/footer";
 import ReactMarkdown from "react-markdown";
+import Head from "next/head";
 
 const Istorie = ({ history, trophies }) => {
   return (
     <div>
+      <Head>
+        <title>RC Grivita - Istoria Clubului</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <PageTemplate pageCover={historyImg} pageTitle={"Istoria Clubului"} />
 
       <div className="container mx-auto pb-20 flex flex-col justify-center items-center">

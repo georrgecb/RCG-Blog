@@ -6,12 +6,17 @@ import axios from "axios";
 import Stats from "../sections/stats";
 import Pagination from "../sections/pagination";
 import Footer from "../sections/footer";
+import Head from "next/head";
+
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Home({ posts, nextMatch, results }) {
   const [current, setCurrent] = useState(0);
   const [postsPerPage, setPostsPerPage] = useState([]);
 
   useEffect(() => {
+    Aos.init({ duration: 2000 });
     const indexOfFirstPost = current * 9;
     setPostsPerPage(
       posts
@@ -29,6 +34,11 @@ export default function Home({ posts, nextMatch, results }) {
 
   return (
     <div>
+      <Head>
+        <title>RC Grivita</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Header frontPage={true} />
       <FrontPage nextMatch={nextMatch} />
       <Stats results={results} nextMatch={nextMatch} />

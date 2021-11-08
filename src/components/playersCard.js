@@ -3,6 +3,7 @@ import React from "react";
 const PlayersCard = ({ position, filterBy, players, highlight }) => {
   return (
     <div
+      data-aos="flip-up"
       className={`relative rounded-lg py-10 bg-gray-900 bg-blend-overlay card-bg bg-local bg-no-repeat bg-cover ${
         highlight ? "border-t-8 border-red-700" : ""
       }`}
