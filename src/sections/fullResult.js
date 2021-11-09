@@ -22,6 +22,8 @@ const FullResult = ({
   return (
     <section
       data-aos="flip-up"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-once={true}
       className="relative max-w-5xl bg-black mx-auto grid text-white my-10 grid-cols-4"
     >
       <h2 className="absolute opacity-0 md:opacity-20 text-gray-200 md:text-6xl lg:text-8xl text-center md:top-12 lg:top-8 right-10 flex items-center">
