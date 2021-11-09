@@ -8,23 +8,19 @@ import Pagination from "../sections/pagination";
 import Footer from "../sections/footer";
 import Head from "next/head";
 
-import Aos from "aos";
-import "aos/dist/aos.css";
-
 export default function Home({ posts, nextMatch, results }) {
   const [current, setCurrent] = useState(0);
   const [postsPerPage, setPostsPerPage] = useState([]);
 
   useEffect(() => {
-    Aos.init({ duration: 2000 });
-    const indexOfFirstPost = current * 9;
+    const indexOfFirstPost = current * 6;
     setPostsPerPage(
       posts
         .sort((a, b) => new Date(b.published_at) - new Date(a.published_at))
         .map((post, index) =>
           index === 0 ? { ...post, latest: true } : { ...post, latest: false }
         )
-        .slice(indexOfFirstPost, indexOfFirstPost + 9)
+        .slice(indexOfFirstPost, indexOfFirstPost + 6)
     );
   }, [current, posts]);
 
