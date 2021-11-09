@@ -1,5 +1,5 @@
-import FrontPage from "../sections/frontPage";
 import { useEffect, useState } from "react";
+import FrontPage from "../sections/frontPage";
 import Header from "../sections/header/header";
 import BlogPosts from "../sections/blogPosts";
 import axios from "axios";

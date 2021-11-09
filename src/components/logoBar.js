@@ -19,9 +19,9 @@ const LogoBar = () => {
           </a>
         </Link>
       </div>
-      <div className="flex justify-center items-stretch h-full">
+      <div className="flex items-stretch h-full">
         <h1
-          className="text-8xl cursor-default py-4 bg-red-700 text-white text-center transform rotate-180 hvr-sweep-to-top"
+          className="text-8xl cursor-default bg-red-700 text-white text-center transform rotate-180 hvr-sweep-to-top"
           style={styles.verticalText}
         >
           RC GRIVITA
